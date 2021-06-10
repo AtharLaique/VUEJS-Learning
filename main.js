@@ -22,6 +22,15 @@
 //            Event Binding
 // -> For click event binding we use @click.
 // -> We define event binding functions in methods property.
+
+// ->         Computed
+// -> A computed property is used to declaratively describe a value that depends
+//    on other values. When you data-bind to a computed property inside the 
+//    template, Vue knows when to update the DOM when any of the values depended
+//    upon by the computed property has changed. This can be very powerful and 
+//    makes your code more declarative, data-driven and thus easier to maintain.
+
+
 var app = new Vue({
   el: '#app',
   data: {
@@ -38,6 +47,12 @@ var app = new Vue({
       if (count > 0) {
         this.count -= 1;
       }
+    },
+  },
+  computed: {
+    title() {
+      const { count, name } = this;
+      return `${name} ${count}`;
     },
   },
 });
