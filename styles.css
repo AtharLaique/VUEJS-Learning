@@ -5,6 +5,9 @@ body {
   padding: 0px;
   height: 40px;
   background-color: yellowgreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .pet {
   display: flex;

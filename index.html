@@ -10,24 +10,7 @@
 
   <body>
     <div id="app">
-      <div class="nav-bar"></div>
-      <div class="pet">
-        <div class="pet-image">
-          <img :src="imageUrl" alt="" />
-        </div>
-        <div class="pet-info">
-          <h1>{{ name }}</h1>
-          <span>{{ title }}</span>
-          <p v-if="isPet">{{ description }}</p>
-          <p v-else>Its a pet</p>
-          <ul v-for="(name, index) in names" :key="index">
-            <li>{{ name }}</li>
-          </ul>
-          <button @click="count +=1">+</button>
-          <span>{{ count }}</span>
-          <button @click="handleCount()">-</button>
-        </div>
-      </div>
+      <Navbar name="Athar Laique" />
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <script src="./main.js"></script>
