@@ -6,3 +6,14 @@ body {
   height: 40px;
   background-color: yellowgreen;
 }
+.pet {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+}
+.pet-image > img {
+  width: 200px;
+  height: 200px;
+}
+.pet-info {
+}

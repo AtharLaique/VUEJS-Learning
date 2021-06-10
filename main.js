@@ -4,10 +4,19 @@
 // -> 'data' property is reffer to data that we want to pass to our dom element.
 // -> To display data in dom elemnt we use {{}} that are called experession.
 // -> we can use expression for condtions as well.
+
+//              v-bind
+// -> v-bind is use to daynamically bind expression/data with attribute.
+// -> v-bind:src="imageUrl" / :src="imageUrl" is syntax to use with attribute.
+// -> Here src is attribute an attribute and imageUrl is an expression/data.
+// -> Whenever the data property imageUrl change the src attribute will update.
+// -> For detail watch https://www.vuemastery.com/courses/intro-to-vue-js/attribute-binding
+
 var app = new Vue({
   el: '#app',
   data: {
-    name: 'Athar Laique',
-    description: 'I ma a web developer',
+    name: 'Dog',
+    description: 'Its a balck dog',
+    imageUrl: 'https://picsum.photos/id/237/200/300',
   },
 });
