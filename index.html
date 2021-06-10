@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="./styles.css" />
     <title>VUE LEARNING</title>
   </head>
+
   <body>
     <div id="app">
       <div class="nav-bar"></div>
@@ -21,6 +22,9 @@
           <ul v-for="(name, index) in names" :key="index">
             <li>{{ name }}</li>
           </ul>
+          <button @click="count +=1">+</button>
+          <span>{{ count }}</span>
+          <button @click="handleCount()">-</button>
         </div>
       </div>
     </div>

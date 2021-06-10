@@ -1,4 +1,4 @@
-//              Lesson 1
+//             Lesson 1
 // -> Here we are creating instance of Vue object.
 // -> 'el' property reffers to the element in the dom.
 // -> 'data' property is reffer to data that we want to pass to our dom element.
@@ -18,6 +18,10 @@
 //            Rendring List
 // -> v-for we use for rendering arry list of items.
 // -> We will also use key for each list item.
+
+//            Event Binding
+// -> For click event binding we use @click.
+// -> We define event binding functions in methods property.
 var app = new Vue({
   el: '#app',
   data: {
@@ -26,5 +30,14 @@ var app = new Vue({
     imageUrl: 'https://picsum.photos/id/237/200/300',
     isPet: false,
     names: ['cat', 'cow', 'tiger'],
+    count: 0,
+  },
+  methods: {
+    handleCount() {
+      const { count } = this;
+      if (count > 0) {
+        this.count -= 1;
+      }
+    },
   },
 });
