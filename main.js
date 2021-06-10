@@ -15,7 +15,9 @@
 //            Conditional Rendering
 // -> v-if, v-else-if and v-else we use for putt the condtion.
 
-
+//            Rendring List
+// -> v-for we use for rendering arry list of items.
+// -> We will also use key for each list item.
 var app = new Vue({
   el: '#app',
   data: {
@@ -23,5 +25,6 @@ var app = new Vue({
     description: 'Its a balck dog',
     imageUrl: 'https://picsum.photos/id/237/200/300',
     isPet: false,
+    names: ['cat', 'cow', 'tiger'],
   },
 });

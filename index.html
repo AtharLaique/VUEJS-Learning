@@ -18,6 +18,9 @@
           <h1>{{ name }}</h1>
           <p v-if="isPet">{{ description }}</p>
           <p v-else>Its a pet</p>
+          <ul v-for="(name, index) in names" :key="index">
+            <li>{{ name }}</li>
+          </ul>
         </div>
       </div>
     </div>
