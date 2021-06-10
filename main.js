@@ -1,3 +1,4 @@
+//              Lesson 1
 // -> Here we are creating instance of Vue object.
 // -> 'el' property reffers to the element in the dom.
 // -> 'data' property is reffer to data that we want to pass to our dom element.
