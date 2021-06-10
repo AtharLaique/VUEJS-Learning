@@ -10,7 +10,11 @@
 // -> v-bind:src="imageUrl" / :src="imageUrl" is syntax to use with attribute.
 // -> Here src is attribute an attribute and imageUrl is an expression/data.
 // -> Whenever the data property imageUrl change the src attribute will update.
-// -> For detail watch https://www.vuemastery.com/courses/intro-to-vue-js/attribute-binding
+// -> For detail watch https://www.vuemastery.com/courses/intro-to-vue-js/attribute-binding.
+
+//            Conditional Rendering
+// -> v-if, v-else-if and v-else we use for putt the condtion.
+
 
 var app = new Vue({
   el: '#app',
@@ -18,5 +22,6 @@ var app = new Vue({
     name: 'Dog',
     description: 'Its a balck dog',
     imageUrl: 'https://picsum.photos/id/237/200/300',
+    isPet: false,
   },
 });
