@@ -25,7 +25,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: "history", // Allow browswer to use the history.pushState api for changing the route with out reloading
   base: process.env.BASE_URL,
   routes,
 });
