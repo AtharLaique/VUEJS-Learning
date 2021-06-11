@@ -2,7 +2,7 @@
     <div class="card">
         <h4>{{ title }}</h4>
         <p>{{ body }}</p>
-        <router-link :to="{name:'EventShow', params:{ id: id}}">Click</router-link>
+        <BaseLink text="click" :id="id" />
     </div>
 </template>
 
@@ -25,5 +25,6 @@
         padding: 10px;
         border:1px solid silver;
         width: 400px;
+        height: auto;
     }
 </style>
