@@ -12,9 +12,10 @@ const routes = [
     component: EventList,
   },
   {
-    path: "/event",
+    path: "/event/:id",//Step1: add daynamic segment
     name: "EventShow",
     component: EventShow,
+    props: true, //Step 5: Enable Props
   },
   {
     path: "/event/create",
