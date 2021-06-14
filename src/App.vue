@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-    <h1 class="heading">Vue Form Handling</h1>
+    <h1 class="heading">Form Basic Components</h1>
     <Input
       :label="'Enter your name'"
       :placeholder="'Enter Valid Name'"
       :type="'text'"
     />
+    <SelectOptions />
     <CheckBox />
   </div>
 </template>
@@ -13,10 +14,12 @@
 <script>
 import Input from './components/Input.vue';
 import CheckBox from './components/CheckBox.vue';
+import SelectOptions from './components/SelectOptions.vue';
 export default {
   components: {
     Input,
     CheckBox,
+    SelectOptions,
   },
 };
 </script>
