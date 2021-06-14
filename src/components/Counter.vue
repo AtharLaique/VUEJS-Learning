@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <span>{{ countNow }}</span>
+    <span>{{ count }}</span>
     <button class="reset" @click="reset()">0</button>
     <button class="plus" @click="add()">+</button>
     <button class="minus" @click="subtract()">-</button>
@@ -8,29 +8,28 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   data() {
     return {
-      count: 0,
+      counting: 0,
     };
   },
   methods: {
     add() {
-      this.count += 1;
+      this.counting += 1;
     },
     subtract() {
       if (this.count > 0) {
-        this.count -= 1;
+        this.counting -= 1;
       }
     },
     reset() {
-      this.count = 0;
+      this.counting = 0;
     },
   },
   computed: {
-    countNow() {
-      return this.count;
-    },
+    ...mapState(['count']),
   },
 };
 </script>
