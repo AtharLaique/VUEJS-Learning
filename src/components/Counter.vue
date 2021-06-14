@@ -4,14 +4,14 @@
     <div class="signal" :style="{ backgroundColor: isEven }"></div>
     <span>{{ count }}</span>
     <div class="buttons">
-      <button class="reset" @click="reset()">0</button>
-      <button class="plus" @click="add()">+</button>
-      <button class="minus" @click="subtract()">-</button>
+      <button class="reset" @click="clickHandler('RESET')">0</button>
+      <button class="plus" @click="clickHandler('ADD')">+</button>
+      <button class="minus" @click="clickHandler('SUBTRACT')">-</button>
     </div>
     <div class="buttons">
-      <button class="reset" @click="clear()">async</button>
-      <button class="plus" @click="increment()">async</button>
-      <button class="minus" @click="decrement()">async</button>
+      <button class="reset" @click="asyncHandler('clear')">async</button>
+      <button class="plus" @click="asyncHandler('increment')">async</button>
+      <button class="minus" @click="asyncHandler('decrement')">async</button>
     </div>
   </div>
 </template>
@@ -19,8 +19,6 @@
 <script>
 import Loading from './Loading.vue';
 import { mapState, mapGetters } from 'vuex';
-import { countMutations } from '../store/mutations';
-const { ADD, SUB, RESET } = countMutations;
 export default {
   components: {
     Loading,
@@ -31,23 +29,11 @@ export default {
     };
   },
   methods: {
-    add() {
-      this.$store.commit(ADD);
+    clickHandler(type) {
+      this.$store.commit(type);
     },
-    subtract() {
-      this.$store.commit(SUB);
-    },
-    reset() {
-      this.$store.commit(RESET);
-    },
-    increment() {
-      this.$store.dispatch('increment');
-    },
-    decrement() {
-      this.$store.dispatch('decrement');
-    },
-    clear() {
-      this.$store.dispatch('clear');
+    asyncHandler(type) {
+      this.$store.dispatch(type);
     },
   },
   computed: {
