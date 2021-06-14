@@ -1,18 +1,14 @@
 <template>
   <div class="container">
-    <label for="name" class="label">What is your name</label>
-    <input
-      class="input"
-      v-model="name"
-      type="text"
-      placeholder="Enter your Name"
-    />
+    <label for="name" class="label">{{ label }}</label>
+    <input class="input" v-model="name" type="type" placeholder="placeholder" />
     <span>{{ name }}</span>
   </div>
 </template>
 
 <script>
 export default {
+  props: ['type', 'label', 'placeholder'],
   data() {
     return {
       name: '',

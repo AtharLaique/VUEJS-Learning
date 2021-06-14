@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <h1 class="heading">Vue Form Handling</h1>
-    <Input />
+    <Input
+      :label="'Enter your name'"
+      :placeholder="'Enter Valid Name'"
+      :type="'text'"
+    />
   </div>
 </template>
 
