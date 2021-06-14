@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <Loading />
     <div class="signal" :style="{ backgroundColor: isEven }"></div>
     <span>{{ count }}</span>
     <div class="buttons">
@@ -7,14 +8,23 @@
       <button class="plus" @click="add()">+</button>
       <button class="minus" @click="subtract()">-</button>
     </div>
+    <div class="buttons">
+      <button class="reset" @click="clear()">async</button>
+      <button class="plus" @click="increment()">async</button>
+      <button class="minus" @click="decrement()">async</button>
+    </div>
   </div>
 </template>
 
 <script>
+import Loading from './Loading.vue';
 import { mapState, mapGetters } from 'vuex';
 import { countMutations } from '../store/mutations';
 const { ADD, SUB, RESET } = countMutations;
 export default {
+  components: {
+    Loading,
+  },
   data() {
     return {
       counting: 0,
@@ -29,6 +39,15 @@ export default {
     },
     reset() {
       this.$store.commit(RESET);
+    },
+    increment() {
+      this.$store.dispatch('increment');
+    },
+    decrement() {
+      this.$store.dispatch('decrement');
+    },
+    clear() {
+      this.$store.dispatch('clear');
     },
   },
   computed: {
@@ -54,7 +73,7 @@ export default {
 .buttons > button {
   padding: 10px;
   width: 100px;
-  margin: 0px 10px;
+  margin: 10px;
   font-size: 22px;
   border: none;
   border-radius: 8px;

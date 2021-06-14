@@ -7,6 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     count: 0,
+    loading: false,
   },
   getters: {
     isEven: (state) => {
@@ -18,6 +19,9 @@ export default new Vuex.Store({
     },
   },
   mutations: {
+    setLoading(state) {
+      state.loading = !state.loading;
+    },
     [countMutations.ADD](state) {
       state.count += 1;
     },
@@ -30,6 +34,28 @@ export default new Vuex.Store({
       state.count = 0;
     },
   },
-  actions: {},
+  actions: {
+    increment({ commit }) {
+      commit('setLoading');
+      setTimeout(() => {
+        commit(countMutations.ADD);
+        commit('setLoading');
+      }, 2000);
+    },
+    decrement({ commit }) {
+      commit('setLoading');
+      setTimeout(() => {
+        commit('setLoading');
+        commit(countMutations.SUB);
+      }, 2000);
+    },
+    clear({ commit }) {
+      commit('setLoading');
+      setTimeout(() => {
+        commit('setLoading');
+        commit(countMutations.RESET);
+      }, 2000);
+    },
+  },
   modules: {},
 });
