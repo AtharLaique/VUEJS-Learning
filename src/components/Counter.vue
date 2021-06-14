@@ -2,7 +2,7 @@
   <div class="container">
     <Loading />
     <div class="signal" :style="{ backgroundColor: isEven }"></div>
-    <span>{{ count }}</span>
+    <span>{{ count.count }}</span>
     <div class="buttons">
       <button class="reset" @click="clickHandler('RESET')">0</button>
       <button class="plus" @click="clickHandler('ADD')">+</button>
