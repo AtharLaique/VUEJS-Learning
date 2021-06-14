@@ -1,6 +1,7 @@
 import { countMutations } from '../mutations';
 const { ADD, SUB, RESET } = countMutations;
 export default {
+  namespaced: true,
   state: {
     count: 0,
   },
@@ -28,23 +29,23 @@ export default {
   },
   actions: {
     increment({ commit }) {
-      commit('asyncCall/setLoading');
+      commit('asyncCall/setLoading', null, { root: true });
       setTimeout(() => {
         commit(countMutations.ADD);
-        commit('asyncCall/setLoading');
+        commit('asyncCall/setLoading', null, { root: true });
       }, 2000);
     },
     decrement({ commit }) {
-      commit('asyncCall/setLoading');
+      commit('asyncCall/setLoading', null, { root: true });
       setTimeout(() => {
-        commit('asyncCall/setLoading');
+        commit('asyncCall/setLoading', null, { root: true });
         commit(countMutations.SUB);
       }, 2000);
     },
     clear({ commit }) {
-      commit('asyncCall/setLoading');
+      commit('asyncCall/setLoading', null, { root: true });
       setTimeout(() => {
-        commit('asyncCall/setLoading');
+        commit('asyncCall/setLoading', null, { root: true });
         commit(countMutations.RESET);
       }, 2000);
     },

@@ -4,14 +4,18 @@
     <div class="signal" :style="{ backgroundColor: isEven }"></div>
     <span>{{ count.count }}</span>
     <div class="buttons">
-      <button class="reset" @click="clickHandler('RESET')">0</button>
-      <button class="plus" @click="clickHandler('ADD')">+</button>
-      <button class="minus" @click="clickHandler('SUBTRACT')">-</button>
+      <button class="reset" @click="clickHandler('count/RESET')">0</button>
+      <button class="plus" @click="clickHandler('count/ADD')">+</button>
+      <button class="minus" @click="clickHandler('count/SUBTRACT')">-</button>
     </div>
     <div class="buttons">
-      <button class="reset" @click="asyncHandler('clear')">async</button>
-      <button class="plus" @click="asyncHandler('increment')">async</button>
-      <button class="minus" @click="asyncHandler('decrement')">async</button>
+      <button class="reset" @click="asyncHandler('count/clear')">async</button>
+      <button class="plus" @click="asyncHandler('count/increment')">
+        async
+      </button>
+      <button class="minus" @click="asyncHandler('count/decrement')">
+        async
+      </button>
     </div>
   </div>
 </template>
@@ -38,7 +42,7 @@ export default {
   },
   computed: {
     ...mapState(['count']),
-    ...mapGetters(['isEven']),
+    ...mapGetters('count', ['isEven']),
   },
 };
 </script>
