@@ -16,7 +16,19 @@ export default new Vuex.Store({
       } else return 'crimson';
     },
   },
-  mutations: {},
+  mutations: {
+    add(state) {
+      state.count += 1;
+    },
+    subtract(state) {
+      if (state.count > 0) {
+        state.count -= 1;
+      }
+    },
+    reset(state) {
+      state.count = 0;
+    },
+  },
   actions: {},
   modules: {},
 });

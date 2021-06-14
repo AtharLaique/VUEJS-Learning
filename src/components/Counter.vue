@@ -20,15 +20,13 @@ export default {
   },
   methods: {
     add() {
-      this.counting += 1;
+      this.$store.commit('add');
     },
     subtract() {
-      if (this.count > 0) {
-        this.counting -= 1;
-      }
+      this.$store.commit('subtract');
     },
     reset() {
-      this.counting = 0;
+      this.$store.commit('reset');
     },
   },
   computed: {
