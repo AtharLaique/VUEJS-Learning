@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { countMutations } from './mutations';
+import asyncCall from './modules/asyncCall';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     count: 0,
-    loading: false,
   },
   getters: {
     isEven: (state) => {
@@ -19,9 +19,6 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-    setLoading(state) {
-      state.loading = !state.loading;
-    },
     [countMutations.ADD](state) {
       state.count += 1;
     },
@@ -36,26 +33,28 @@ export default new Vuex.Store({
   },
   actions: {
     increment({ commit }) {
-      commit('setLoading');
+      commit('asyncCall/setLoading');
       setTimeout(() => {
         commit(countMutations.ADD);
-        commit('setLoading');
+        commit('asyncCall/setLoading');
       }, 2000);
     },
     decrement({ commit }) {
-      commit('setLoading');
+      commit('asyncCall/setLoading');
       setTimeout(() => {
-        commit('setLoading');
+        commit('asyncCall/setLoading');
         commit(countMutations.SUB);
       }, 2000);
     },
     clear({ commit }) {
-      commit('setLoading');
+      commit('asyncCall/setLoading');
       setTimeout(() => {
-        commit('setLoading');
+        commit('asyncCall/setLoading');
         commit(countMutations.RESET);
       }, 2000);
     },
   },
-  modules: {},
+  modules: {
+    asyncCall,
+  },
 });
