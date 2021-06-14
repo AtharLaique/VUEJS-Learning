@@ -1,25 +1,15 @@
 <template>
   <div id="app">
-    <h1 class="heading">Form Basic Components</h1>
-    <Input
-      :label="'Enter your name'"
-      :placeholder="'Enter Valid Name'"
-      :type="'text'"
-    />
-    <SelectOptions />
-    <CheckBox />
+    <Navbar />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Input from './components/Input.vue';
-import CheckBox from './components/CheckBox.vue';
-import SelectOptions from './components/SelectOptions.vue';
+import Navbar from './components/Navbar.vue';
 export default {
   components: {
-    Input,
-    CheckBox,
-    SelectOptions,
+    Navbar,
   },
 };
 </script>
@@ -39,8 +29,5 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-.heading {
-  color: indigo;
 }
 </style>

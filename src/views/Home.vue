@@ -1,18 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1 class="heading">Form Basic Components</h1>
+    <Input
+      :label="'Enter your name'"
+      :placeholder="'Enter Valid Name'"
+      :type="'text'"
+    />
+    <SelectOptions />
+    <CheckBox />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Input from '@/components/Input.vue';
+import CheckBox from '@/components/CheckBox.vue';
+import SelectOptions from '@/components/SelectOptions.vue';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    HelloWorld,
+    Input,
+    CheckBox,
+    SelectOptions,
   },
 };
 </script>
+<style scoped>
+.heading {
+  color: indigo;
+}
+</style>
