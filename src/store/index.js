@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { countMutations } from './mutations';
 
 Vue.use(Vuex);
 
@@ -17,15 +18,15 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-    add(state) {
+    [countMutations.ADD](state) {
       state.count += 1;
     },
-    subtract(state) {
+    [countMutations.SUB](state) {
       if (state.count > 0) {
         state.count -= 1;
       }
     },
-    reset(state) {
+    [countMutations.RESET](state) {
       state.count = 0;
     },
   },

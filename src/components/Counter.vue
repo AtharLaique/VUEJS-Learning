@@ -12,6 +12,8 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex';
+import { countMutations } from '../store/mutations';
+const { ADD, SUB, RESET } = countMutations;
 export default {
   data() {
     return {
@@ -20,13 +22,13 @@ export default {
   },
   methods: {
     add() {
-      this.$store.commit('add');
+      this.$store.commit(ADD);
     },
     subtract() {
-      this.$store.commit('subtract');
+      this.$store.commit(SUB);
     },
     reset() {
-      this.$store.commit('reset');
+      this.$store.commit(RESET);
     },
   },
   computed: {
