@@ -6,14 +6,17 @@
       :placeholder="'Enter Valid Name'"
       :type="'text'"
     />
+    <CheckBox />
   </div>
 </template>
 
 <script>
 import Input from './components/Input.vue';
+import CheckBox from './components/CheckBox.vue';
 export default {
   components: {
     Input,
+    CheckBox,
   },
 };
 </script>
