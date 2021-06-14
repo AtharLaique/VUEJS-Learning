@@ -1,14 +1,17 @@
 <template>
   <div class="container">
+    <div class="signal" :style="{ backgroundColor: isEven }"></div>
     <span>{{ count }}</span>
-    <button class="reset" @click="reset()">0</button>
-    <button class="plus" @click="add()">+</button>
-    <button class="minus" @click="subtract()">-</button>
+    <div class="buttons">
+      <button class="reset" @click="reset()">0</button>
+      <button class="plus" @click="add()">+</button>
+      <button class="minus" @click="subtract()">-</button>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 export default {
   data() {
     return {
@@ -30,18 +33,25 @@ export default {
   },
   computed: {
     ...mapState(['count']),
+    ...mapGetters(['isEven']),
   },
 };
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .container > span {
   color: white;
   font-size: 86px;
   display: block;
   font-weight: bold;
 }
-.container > button {
+.buttons > button {
   padding: 10px;
   width: 100px;
   margin: 0px 10px;
@@ -59,5 +69,11 @@ export default {
 }
 .minus {
   color: crimson;
+}
+.signal {
+  width: 70px;
+  height: 70px;
+  background-color: crimson;
+  border-radius: 100%;
 }
 </style>
